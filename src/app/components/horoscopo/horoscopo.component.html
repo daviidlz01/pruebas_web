@@ -1,1 +1,40 @@
-<p>horoscopo works!</p>
+<div class="container" style="color: rgb(255, 255, 255);">
+    <form #foroscopo="ngForm" class="bg-dark">
+        <div>
+            <label >elija su signo</label>
+            <select name="signo" id="signo" class="form-select" [(ngModel)]="horoscopo.signo" >
+                <option value="Aries">Aries</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Capricorn">Capricorn</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Pisces">Pisces</option>
+            </select>
+        </div>
+        <div>
+            <label >elija el dia</label>
+            <select name="dia" id="dia" class="form-select"[(ngModel)]="horoscopo.dia">
+                <option value="today">today</option>
+                <option value="yesterday">yesterday</option>
+                <option value="tomorrow">tomorrow</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="consultar()">consultar</button>
+        </div>
+        <div>
+            <h6>usted eliguio : {{horoscopo.signo}}</h6>
+            <h6>usted eligui: {{horoscopo.dia}}</h6> <br>
+            <h6>su signo tiene esta fecha : {{horoscopo.Isigno}}</h6>
+            <h6>su color favorito es : {{horoscopo.color}} </h6>
+            <h6>la descripcion es : {{horoscopo.desc}} </h6>
+            <h6>la fecha valida de la descripcion es : {{horoscopo.fecha}} </h6>
+        </div>
+    </form>
+</div>
