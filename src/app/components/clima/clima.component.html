@@ -1,0 +1,35 @@
+<div>
+    <form action="" #formclima="ngForm">
+        <!--pedir latitud-->
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">latitud</label>
+            <input type="number" name="lat" class="form-control" id="lat" placeholder="Example input placeholder" [(ngModel)]="clima.latitud">
+        </div>
+        <!--pedir longitud-->
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">longitud</label>
+            <input type="number" name="long" class="form-control" id="long" placeholder="Another input placeholder" [(ngModel)]="clima.longitud">
+        </div>
+        <!--boton para mandar info-->
+        <div>
+            <button class="btn btn-primary" (click)="Cclima()" >consultar clima</button>
+        </div>
+        <!--ejemplo-->
+        <div>
+            <h6>ejemplo de SS de Jujuy <br>  lat: -24.01 log: -65.41</h6>
+        </div>
+        <!--resultado-->
+        <div>
+            <h1>-----------------------</h1>
+            <h6>la ciudad elejida es : {{clima.ciudad}}</h6>           
+            <h6>la temperatura es : {{clima.temperatura}}</h6>
+            <h6>el cilo esta : {{clima.Wdesc}}</h6>
+            <h6>la fecha es : {{clima.fecha}}</h6>
+
+
+        </div>
+        <div >
+            <div>valores: {{formclima.form.value | json}}</div>
+        </div>
+    </form>
+</div>
