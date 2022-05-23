@@ -1,12 +1,12 @@
-<div>
-    <form action="" #formclima="ngForm">
+<div class="container" style="color: rgb(255, 255, 255);">
+    <form action="" #formclima="ngForm" class="bg-dark">
         <!--pedir latitud-->
-        <div class="mb-3">
+        <div class="mb-3 container">
             <label for="formGroupExampleInput" class="form-label">latitud</label>
             <input type="number" name="lat" class="form-control" id="lat" placeholder="Example input placeholder" [(ngModel)]="clima.latitud">
         </div>
         <!--pedir longitud-->
-        <div class="mb-3">
+        <div class="mb-3 container">
             <label for="formGroupExampleInput2" class="form-label">longitud</label>
             <input type="number" name="long" class="form-control" id="long" placeholder="Another input placeholder" [(ngModel)]="clima.longitud">
         </div>
@@ -19,7 +19,7 @@
             <h6>ejemplo de SS de Jujuy <br>  lat: -24.01 log: -65.41</h6>
         </div>
         <!--resultado-->
-        <div>
+        <div class="conatiner">
             <h1>-----------------------</h1>
             <h6>la ciudad elejida es : {{clima.ciudad}}</h6>           
             <h6>la temperatura es : {{clima.temperatura}}</h6>

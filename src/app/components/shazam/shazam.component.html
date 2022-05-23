@@ -1,1 +1,19 @@
-<p>shazam works!</p>
+<div class="container" style="color: rgb(255, 255, 255);">
+    <form class="bg-dark" #formsha="ngForm">
+        <div class="container">
+            <label> ingresa el nombre de la cancion</label>
+            <input type="text" id="cancion" name="cancion" class="form-control" [(ngModel)]="cancion"> <br>
+            <button class="btn btn-primary" (click)="buscar()">buscar cancion</button><br><br>
+            <h5>su cancion es :</h5>
+            <h6>{{shazams.nombre}}</h6>
+            <h5>y el link de la cancion es :</h5><br>
+            <h6>{{shazams.Curl}}</h6>
+            <div>
+                <img src="{{shazams.Cimg}}" alt="">
+            </div>
+            <div>
+                <source src="{{shazams.Curl}}" type="">
+            </div>
+        </div>
+    </form>
+</div>

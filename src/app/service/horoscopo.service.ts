@@ -9,7 +9,7 @@ export class HoroscopoService {
 
   constructor(private _http:HttpClient) { }
 
-  horoscopo(sing:string,day:string):Observable<any>{
+  horoscopo(sing:string,day:string){
 
     const options = {
       method: 'POST',
