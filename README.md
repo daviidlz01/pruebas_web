@@ -1,5 +1,29 @@
 # ParcialTest
 
+
+<!--lo necesario para el parcial-->
+<!--
+ng new ......
+npm install bootstrap
+//
+{path: 'formulario', component:FormularioComponent},
+import { HttpClientModule } from '@angular/common/http';
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    
+  ],
+  "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+            ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+-->
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
