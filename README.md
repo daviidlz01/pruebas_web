@@ -6,16 +6,21 @@ lo necesario para el parcial
 
 ng new ......
 npm install bootstrap
-//
+
+
 {path: 'formulario', component:FormularioComponent},
+
+
 import { HttpClientModule } from '@angular/common/http';
+
 imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    
+    HttpClientModule, 
   ],
+  
+  
   "styles": [
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
