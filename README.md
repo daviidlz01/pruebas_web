@@ -1,8 +1,9 @@
 # ParcialTest
 
+-------------------------------
 
-<!--lo necesario para el parcial-->
-<!--
+lo necesario para el parcial
+
 ng new ......
 npm install bootstrap
 //
@@ -22,7 +23,8 @@ imports: [
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
--->
+
+---------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
