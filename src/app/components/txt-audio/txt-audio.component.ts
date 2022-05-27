@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { traduccion } from 'src/app/models/txtAudio';
 import { TxtAudioService } from 'src/app/service/txt-audio.service';
 
@@ -9,8 +10,9 @@ import { TxtAudioService } from 'src/app/service/txt-audio.service';
 })
 export class TxtAudioComponent implements OnInit {
 
+  url!:SafeUrl;
   traduc!:traduccion
-  constructor(private textService : TxtAudioService) {
+  constructor(private textService : TxtAudioService ,private sanitizer:DomSanitizer) {
     this.traduc=new traduccion()
    }
 
@@ -22,7 +24,8 @@ export class TxtAudioComponent implements OnInit {
     this.textService.traducir('es-AR-2',this.traduc.texto).subscribe(
       (data:any)=>{
         console.log(data)
-        this.traduc.Turl = data.result.audio_url
+        this.url = this.sanitizer.bypassSecurityTrustResourceUrl(data.result.audio_url) 
+        
       }
     )
   }

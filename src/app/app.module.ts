@@ -12,6 +12,7 @@ import { GeneradorQRComponent } from './components/generador-qr/generador-qr.com
 import { TxtAudioComponent } from './components/txt-audio/txt-audio.component';
 import { ClimaComponent } from './components/clima/clima.component';
 import { ShazamComponent } from './components/shazam/shazam.component';
+import { PeliculasComponent } from './components/peliculas/peliculas.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ShazamComponent } from './components/shazam/shazam.component';
     GeneradorQRComponent,
     TxtAudioComponent,
     ClimaComponent,
-    ShazamComponent
+    ShazamComponent,
+    PeliculasComponent
   ],
   imports: [
     BrowserModule,

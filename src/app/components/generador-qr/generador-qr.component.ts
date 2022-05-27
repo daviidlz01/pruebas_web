@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { generadorQr } from 'src/app/models/generar-qr';
 import { QrGeneradorService } from 'src/app/service/qr-generador.service';
 
@@ -10,8 +11,8 @@ import { QrGeneradorService } from 'src/app/service/qr-generador.service';
 export class GeneradorQRComponent implements OnInit {
 
   generarQr!:generadorQr;
-  imgqr!:string
-  constructor(private generarQRservice:QrGeneradorService) {
+  imgqr!:SafeHtml;
+  constructor(private generarQRservice:QrGeneradorService, private satitizer:DomSanitizer) {
     this.generarQr=new generadorQr()
    }
 
@@ -23,8 +24,13 @@ export class GeneradorQRComponent implements OnInit {
     this.generarQRservice.qr(this.generarQr.myurl).subscribe(
       (data:any) =>{
         console.log(data)
-        this.imgqr = data.result
+        this.imgqr = this.satitizer.bypassSecurityTrustHtml(data.result); 
       }
     )
   }
 }
+
+/*this.qrGenerateService.getQr(url).subscribe( (res) => {
+      this.qr = this.sanitizer.bypassSecurityTrustHtml(res.result);
+    })
+    */

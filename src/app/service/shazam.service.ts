@@ -12,13 +12,13 @@ export class ShazamService {
 
     const opcions ={
       method: 'GET',
-      params: {term:term},
+      params: {'q':term},
       headers:new HttpHeaders({
-        'X-RapidAPI-Host':'shazam.p.rapidapi.com',
+        'X-RapidAPI-Host':'deezerdevs-deezer.p.rapidapi.com',
         'X-RapidAPI-Key':'1672ae780fmshc3b404055cc54fep1efeaejsnaa14c0a0c8d6'
       })
     }
-    return this._http.get('https://shazam.p.rapidapi.com/search',opcions)
+    return this._http.get('https://deezerdevs-deezer.p.rapidapi.com/search',opcions)
   }
 
 }

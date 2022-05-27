@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { shazams } from 'src/app/models/shazam';
+import { Cancion } from 'src/app/models/shazam';
 import { ShazamService } from 'src/app/service/shazam.service';
 
 @Component({
@@ -8,14 +8,17 @@ import { ShazamService } from 'src/app/service/shazam.service';
   styleUrls: ['./shazam.component.css']
 })
 export class ShazamComponent implements OnInit {
-
-  cancion!:string;
+  nombre!:string
   Curl!:string
-  shazams!:shazams
+  cancion!:Cancion
+  weas!: Array<any>
+
+  canciones!:Array<Cancion>
 
   constructor(private shazamService : ShazamService) { 
 
-    this.shazams = new shazams()
+    this.weas = new Array<any>()
+    this.canciones = new Array<Cancion>()
   }
 
   ngOnInit(): void {
@@ -23,14 +26,30 @@ export class ShazamComponent implements OnInit {
 
   buscar(){
     console.log("niceee")
-    this.shazamService.shazamear(this.cancion).subscribe(
+    this.shazamService.shazamear(this.nombre).subscribe(
       (data:any) =>{
-        console.log(data)
-        this.shazams.Curl = data.tracks.hits[0].track.url
-        this.shazams.nombre = data.tracks.hits[0].track.title
-        this.shazams.Cimg = data.tracks.hits[0].track.share.image
+
+        console.log(data.data[0].id)
+         this.agregarCanciones(data.data)
+        console.log(this.canciones)
+          
+       /* this.shazams.Curl = data.tracks.hits[0].track.url
+        this.shazams.nombre = data.data[0].title
+        this.shazams.Cimg = data.tracks.hits[0].track.share.image*/
       }
     )
+  }
+  agregarCanciones(canciones:Array<any>){
+    
+    for (let i=0;i<=canciones.length;i++){
+          this.cancion = new Cancion()
+    
+          this.cancion.nombre = canciones[i].title
+          this.cancion.Curl = canciones[i].preview
+          this.cancion.Cimg = canciones[i].album.cover_small
+          this.canciones.push(this.cancion)
+    
+        } 
   }
 
 }

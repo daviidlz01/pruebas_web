@@ -3,12 +3,10 @@
         <label > ingrese el texto </label>
         <input type="text" class="form-group" name="tex"id="tex" [(ngModel)]="traduc.texto">
         <br><button class="btn btn-primary" (click)="traducir()"> traducir</button>
-        <div>
-            <h6>{{traduc.Turl}}</h6>
-        </div>
-        <div>
-            <source src="{{traduc.Turl}}" id="audio" name="audio">
-        </div>
+        <div class="conainer">
+            <audio controls ><source src="{{url}}" type="url" ></audio>
+            <iframe src="{{url}}" frameborder="0" sandbox ></iframe>
+        </div>    
         <div> {{fortex.form.value |json}}</div>
     </form>
 

@@ -1,0 +1,13 @@
+<div class="container">
+    <div *ngFor="let pelis of peliculas" class="col card h-100"> 
+
+        <img src="{{pelis.imagen}}" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pelis.titulo}}</h5>
+          <p class="card-text">{{pelis.descripcion}}</p>
+        </div>
+
+
+    </div>
+
+</div>

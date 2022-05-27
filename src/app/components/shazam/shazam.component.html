@@ -2,17 +2,22 @@
     <form class="bg-dark" #formsha="ngForm">
         <div class="container">
             <label> ingresa el nombre de la cancion</label>
-            <input type="text" id="cancion" name="cancion" class="form-control" [(ngModel)]="cancion"> <br>
+            <input type="text" id="cancion" name="cancion" class="form-control" [(ngModel)]="nombre"> <br>
             <button class="btn btn-primary" (click)="buscar()">buscar cancion</button><br><br>
             <h5>su cancion es :</h5>
-            <h6>{{shazams.nombre}}</h6>
-            <h5>y el link de la cancion es :</h5><br>
-            <h6>{{shazams.Curl}}</h6>
-            <div>
-                <img src="{{shazams.Cimg}}" alt="">
-            </div>
-            <div>
-                <source src="{{shazams.Curl}}" type="">
+            <div *ngFor = "let cancion of canciones">
+                <h6>{{cancion.nombre}}</h6>
+                <div>
+                    <img src="{{cancion.Cimg}}" alt="">
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    <audio controls ><source src="{{cancion.Curl}}" type="audio/mp3"></audio>
+                </div>
+                
+                
             </div>
         </div>
     </form>
